@@ -20,7 +20,7 @@
     "prebuild": "npm run clean",
     "predocs": "rimraf docs",
     "prerelease": "npm run build",
-    "pretest": "npm run clean",
+    "pretest": "npm run clean && npm run build:cpp",
     "release": "release-it --ci --no-npm.publish",
     "test:junit": "npm run test -- --reporter mocha-junit-reporter --reporter-options mochaFile=.junit.xml",
     "test:watch": "nodemon --exec 'npm run test'"
