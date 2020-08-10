@@ -1,23 +1,23 @@
 # Templ Javascript
 
-[![HitCount](http://hits.dwyl.com/templ-project/javascript.svg)](http://hits.dwyl.com/templ-project/javascript)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/templ-project/javascript/issues)
-[![TravisCI](https://travis-ci.org/templ-project/javascript.svg?branch=master)](https://travis-ci.org/templ-project/javascript)
+[![HitCount](http://hits.dwyl.com/templ-project/nodejs-addon-nan.svg)](http://hits.dwyl.com/templ-project/nodejs-addon-nan)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/templ-project/nodejs-addon-nan/issues)
+[![TravisCI](https://travis-ci.org/templ-project/nodejs-addon-nan.svg?branch=master)](https://travis-ci.org/templ-project/nodejs-addon-nan)
 ![JSCPD](.jscpd/jscpd-badge.svg?raw=true)
 <!-- CI Badges -->
-<!-- [![CircleCI](https://circleci.com/gh/templ-project/javascript.svg?style=shield)](https://circleci.com/gh/templ-project/javascript) -->
+<!-- [![CircleCI](https://circleci.com/gh/templ-project/nodejs-addon-nan.svg?style=shield)](https://circleci.com/gh/templ-project/nodejs-addon-nan) -->
 
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_javascript&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_javascript)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_javascript&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_javascript)
-[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_javascript&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_javascript)
-[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_javascript&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_javascript)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_nodejs-addon-nan)
+[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_nodejs-addon-nan)
+[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_nodejs-addon-nan)
+[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_nodejs-addon-nan)
 
 <!-- Donation Badges -->
 [![Donate to this project using Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/dragoscirjan)
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QBP6DEBJDEMV2&source=url)
 
-<img alt="JavaScript Logo" src="https://github.com/templ-project/javascript/blob/master/javascript.svg?raw=true" width="20%" align="right" />
-<img alt="TypeScript Logo" src="https://github.com/templ-project/javascript/blob/master/typescript.svg?raw=true" width="20%" align="right" />
+<img alt="JavaScript Logo" src="https://github.com/templ-project/nodejs-addon-nan/blob/master/javascript.svg?raw=true" width="20%" align="right" />
+<img alt="TypeScript Logo" src="https://github.com/templ-project/nodejs-addon-nan/blob/master/typescript.svg?raw=true" width="20%" align="right" />
 
 > *Any fool can write code that a computer can understand. Good programmers write code that humans can understand.* – Martin Fowler
 
@@ -65,7 +65,7 @@ None for now. -->
 ### Installation
 
 ```bash
-git clone https://github.com/templ-project/javascript your_project
+git clone https://github.com/templ-project/nodejs-addon-nan your_project
 cd your_project
 rm -rf .git
 git init
@@ -100,7 +100,7 @@ Please install:
 ##### VSCode Configuration
 
 - Copy ./vscode/c_cpp_properties.json.template to ./vscode/c_cpp_properties.json
-- Run npx node-gyp configure to discover the location of the NodeJS headers (search for smth like this '-Dnode_root_dir=C:\\Users\\dragosc\\AppData\\Local\\node-gyp\\Cache\\12.16.2') and replace in the:
+- Run `npx node-gyp configure` to discover the location of the NodeJS headers (search for smth like this `'-Dnode_root_dir=C:\\Users\\dragosc\\AppData\\Local\\node-gyp\\Cache\\12.16.2'`) and replace in the:
 ```json
   "includePath": [
     "${workspaceFolder}/**", 
@@ -144,7 +144,7 @@ npm run release
 
 ## Issues / Support
 
-Add a set of links to the [issues](/templ-project/javascript/issues) page/website, so people can know where to add issues/bugs or ask for support.
+Add a set of links to the [issues](/templ-project/nodejs-addon-nan/issues) page/website, so people can know where to add issues/bugs or ask for support.
 
 ## License
 

@@ -1,7 +1,7 @@
 {
-  "name": "templ-project-javascript",
+  "name": "templ-project-nodejs-addon-nan",
   "version": "0.0.1",
-  "description": "Javascript Project Template",
+  "description": "NodeJs Addon Project Template using NAN",
   "main": "dist/index.js",
   "scripts": {
     "build:cpp": "npx node-gyp configure && npx node-gyp build",
