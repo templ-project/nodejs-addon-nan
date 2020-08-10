@@ -7,8 +7,8 @@
 #include <v8.h>
 
 void Hello(const Nan::FunctionCallbackInfo<v8::Value>& info) {
-  v8::Local<v8::Context> context = info.GetIsolate()->GetCurrentContext();
   v8::Isolate *isolate = info.GetIsolate();
+  v8::Local<v8::Context> context = isolate->GetCurrentContext();
   v8::Local<v8::String> who;
 
   if (info.Length() < 1) {
@@ -17,7 +17,7 @@ void Hello(const Nan::FunctionCallbackInfo<v8::Value>& info) {
     if (!info[0]->IsString()) {
       Nan::ThrowTypeError("Wrong arguments");
     }
-    who = info[0]->ToString(isolate);
+    info[0]->ToString(context).ToLocal(&who);
   }
 
 
