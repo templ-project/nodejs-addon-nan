@@ -6,7 +6,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/node_modules/nan/**",
-                "/path/to/include/node"
+                "/home/dragosc/.cache/node-gyp/12.18.3/include/node"
             ],
             "defines": [],
             "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/bin/Hostx64/x64/cl.exe",
