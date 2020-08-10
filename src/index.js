@@ -1,6 +1,5 @@
-/**
- *
- * @param {string} name
- * @returns {string}
- */
-export const hello = (name) => `Hello ${name}!`;
+import bindings from 'bindings';
+
+const addon = bindings('main');
+
+module.exports  = addon;

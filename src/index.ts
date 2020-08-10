@@ -1,1 +1,5 @@
-export const hello = (name: string): string => `Hello ${name}!`;
+import bindings from 'bindings';
+
+const addon = bindings('main');
+
+module.exports  = addon;
