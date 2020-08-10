@@ -1,10 +1,10 @@
 import {expect} from 'chai';
 import {it, describe} from 'mocha';
 
-import {hello} from '../src';
+import * as hello from '../src';
 
 describe('hello', function () {
   it('hello("World") to return "Hello World!"', function () {
-    expect(hello('World')).to.equal('Hello World!');
+    expect((hello as any).hello('World')).to.equal('Hello World!');
   });
 });
