@@ -2,7 +2,7 @@
     "targets": [
         {
             "target_name": "main",
-            "sources": ["app/main.cc"],
+            "sources": ["src/main.cc"],
             "link_settings": {},
             "include_dirs": [
                 "<!(node -e \"require('nan')\")"

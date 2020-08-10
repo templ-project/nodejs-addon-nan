@@ -4,8 +4,7 @@
   "description": "Javascript Project Template",
   "main": "dist/index.js",
   "scripts": {
-    "configure": "npx node-gyp configure",
-    "build:cpp": "npx node-gyp build",
+    "build:cpp": "npx node-gyp configure && npx node-gyp build",
     "build:js": "rollup -c --environment NODE_ENV:production",
     "build": "npm run build:cpp && npm run build:js",
     "change:language": "node .scripts/change-language.js",

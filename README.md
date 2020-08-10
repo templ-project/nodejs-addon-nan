@@ -85,13 +85,36 @@ npm install
 
 #### Requirements
 
-- Please install [NodeJs](https://nodejs.org/en/). We support version 10.x and above.
-- Please instal a JavaScript/TypeScript IDE
+Please install:
+- [NodeJs](https://nodejs.org/en/). We support version 10.x and above.
+- [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) package: `npm install --global windows-build-tools`
+- a C++ IDE
+  - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-cpp-extension-pack)
+  - Any other IDE you trust.
+- a JavaScript/TypeScript IDE
   - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev Babel Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-babel-extension-pack) or [ITMCDev TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-typescript-extension-pack)
   - [Jetbrains WebStorm](https://www.jetbrains.com/webstorm/)
   - [Vim](https://www.vim.org/) with [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) and [HerringtonDarkholme/yats.vim](https://github.com/HerringtonDarkholme/yats.vim) extensions.
   - Any other IDE you trust.
 
+##### VSCode Configuration
+
+- Copy ./vscode/c_cpp_properties.json.template to ./vscode/c_cpp_properties.json
+- Run npx node-gyp configure to discover the location of the NodeJS headers (search for smth like this '-Dnode_root_dir=C:\\Users\\dragosc\\AppData\\Local\\node-gyp\\Cache\\12.16.2') and replace in the:
+```json
+  "includePath": [
+    "${workspaceFolder}/**", 
+    "${workspaceFolder}/node_modules/nan/**", 
+    "/path/to/node-gyp/Cache/<version>/include/node"
+  ],
+```
+- Add relevant import paths to your clangd modules:
+```json
+  "clangd.arguments": [
+      "-I/path/to/node_modules/nan",
+      "-I/path/to/node-gyp/Cache/12.16.2/include/node"
+  ]
+```
 
 ### Testing
 
@@ -199,6 +222,7 @@ which is also included in
     - [Installation](#installation)
     - [Development](#development)
       - [Requirements](#requirements)
+        - [VSCode Configuration](#vscode-configuration)
     - [Testing](#testing)
       - [Single Tests](#single-tests)
     - [Deployment](#deployment)
