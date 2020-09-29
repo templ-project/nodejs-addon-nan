@@ -21,6 +21,8 @@ cache:
     - node_modules
 before_script:
   - sudo apt-get install -y clang clang-format
+  - clang --version
+  - clang-format --version
   - npm run change:language -- $LANGUAGE
 scripts:
   - set -e
