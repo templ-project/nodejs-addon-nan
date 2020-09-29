@@ -20,7 +20,7 @@ cache:
   directories:
     - node_modules
 before_script:
-  - sudo apt-get install -y clang clang-format
+  - sudo apt-get install -y clang-10 clang-format-10
   - clang --version
   - clang-format --version
   - npm run change:language -- $LANGUAGE
