@@ -50,7 +50,7 @@ const scripts = {
     // esdocs: "esdoc; documentation build src/** -f json -o docs.json",
     "git-hook:pre-commit":
       "npm run prettier:write && npm run lint:write && npm run jscpd && npm run depcruise && npm run test",
-    prettier: "prettier ./{src,test}/**/*.js",
+    'prettier:js': "prettier ./{src,test}/**/*.js",
     // prettier: 'prettier ./{src,test}/**/*.{js,jsx}',
     jscpd: "jscpd ./src --blame --format javascript",
     lint: "eslint ./{src,test}/**/*.js",
@@ -64,7 +64,7 @@ const scripts = {
       "npx typedoc --out docs --json docs.json --readme none --theme minimal --mode file src",
     "git-hook:pre-commit":
       "npm run prettier:write && npm run lint:write && npm run jscpd && npm run depcruise && npm run test",
-    prettier: "prettier ./{src,test}/**/*.ts",
+    'prettier:js': "prettier ./{src,test}/**/*.ts",
     // prettier: 'prettier ./{src,test}/**/*.{ts,tsx}',
     jscpd: "jscpd ./src --blame --format typescript",
     lint: "eslint ./{src,test}/**/*.ts",

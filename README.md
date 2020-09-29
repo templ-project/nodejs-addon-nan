@@ -88,6 +88,7 @@ npm install
 Please install:
 - [NodeJs](https://nodejs.org/en/). We support version 10.x and above.
 - [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) package: `npm install --global windows-build-tools`
+- [LLVM Clang](https://releases.llvm.org/download.html) (this will handle C++ lint and prettier)
 - a C++ IDE
   - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-cpp-extension-pack)
   - Any other IDE you trust.
