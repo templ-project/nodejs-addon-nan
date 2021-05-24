@@ -1,6 +1,5 @@
 # ide
 .idea
-.vscode
 *.code-workspace
 
 # Logs
@@ -9,6 +8,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
 
 # Runtime data
 pids
@@ -36,7 +36,6 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build
-# build/Release
 dist
 
 # Dependency directories
@@ -48,9 +47,11 @@ typings/
 
 # Optional npm cache directory
 .npm
+package-lock.json
 
 # Optional eslint cache
 .eslintcache
+.eslint-output.json
 
 # Optional REPL history
 .node_repl_history
@@ -78,3 +79,4 @@ typings/
 
 # documentation
 docs
+docs.json

@@ -1,15 +1,11 @@
 language: node_js
-dist: focal
 os:
   - linux
   # - osx
   # - windows
-env:
-  - LANGUAGE=javascript
-  - LANGUAGE=typescript
 node_js: # a good example: https://github.com/pillarjs/router/blob/master/.travis.yml
   - "10"
-  # - "11"
+  - "11"
   - "12"
   - "13"
   - "14"
@@ -19,23 +15,15 @@ sudo: false
 cache:
   directories:
     - node_modules
-before_script:
-  - sudo apt-get install -y clang-10 clang-format-10
-  - clang --version
-  - clang-format --version
-  - npm run change:language -- $LANGUAGE
 scripts:
   - set -e
-  - npm i
-  - npm run prettier:write
-  - npm run lint:write
-  - npm run jscpd
+  - npm run ca
   - npm run test
-  - npm run test:junit
   - npm run build
-# after_script:
-  - if [[ $TRAVIS_NODE_VERSION == '12' && $TRAVIS_OS_NAME == 'linux' ]]; then npm run docs;
-    if [[ $LANGUAGE == 'typescript' ]]; then sonar-scanner; fi;
+after_script:
+  - if [[ $TRAVIS_NODE_VERSION == '14' && $TRAVIS_OS_NAME == 'linux' ]]; then
+      npm run docs;
+      sonar-scanner; fi;
     fi
 notifications:
   email:
@@ -47,4 +35,4 @@ addons:
   sonarcloud:
     organization: "templ-project"
     token:
-      secure: "hpZuOt/pINKrPzp+rrZELo8WqOFWEV824lOvCxHFiUXIIr9KFGq1MnqBX28/b9BSUcdT2NOMsi/c+MVfrmf0WnxXPXAybAVe+N7L93BMePMqRvqVtxRXuPhgFY3f/voLyCx4dhX9r0k7dE6qnp4zkpuIQr6lDqjsaMrxXE3PiG/E4i6roj2Y/msbZ+aU7ii17u38SGU6amJcHfbaVlQNji6QIizvswyXEEePnpJ4yA0j6Xtpg+rc1PzqzFwCxfmGDEY4xdc/tpepNcAQxDhoXJe99HJO2odPgvXyuow+M5/ZlDeLDTQXrKLXd2K3EZfYuOUTtin/LvCLlVd+e5vlxrgfLB3jxHzpB/zeILPiqKE3FHVYbcJKAuKc/E4lx6PQvLO53w0vjGibsmsnvF5KNXKD1XWRPoVcuEloRr4RZ1AU8JEXu/vswgBzfGmWEWcLq6x2i+mT1JP4TyV3RahV7wclKfmPx6dS48JtRfpxkkfc4EZV3ThzINQPqDSzxD7Y2wVn5LhBCMcwCKMKWGxRRTY0kIh7Pgly4M9cGrBR7xYesJlfKGBnQfEbvv6D8p5O12hizjWybNVc9UvrbWNeVL7TkBSc5g54+BnC3VokwYr6hbQ3YglA+4NsNKyQY3c9fz5+22g4CqKgGK6lvkxP5/MBp0OkFQ+1ZcqTAazvNzo="
+      secure: r5HrVIMWtNhWKJAKViREyARl3UAHDfJreL0oLTxzY/isOvcDTHMr3xbx+nCJIIKRacVpamDm91oZv1KW16V9ZFL1h/vEobzjxyt4bPoHZHukLj+UvV4QvVJsAgZBAQsjBo75JtDPFhWAHgQOosWkx3u41RMGRNOP7QlOoO3CaJwynN5uhyOvKJ2KtjNNVjiBf0rM0x/qfrKtV9LXN8C+6tTK2/YesvR1jJYzTCYi+fgLNfSqz9pOs5AwrnEWQIBpyDwICTTgZOt55dGbQWVUhg2I8b+XjvVso5K1B8ovbNYBICVvf6EUnHne5uoa0h9FrJPbsp9g1tktnFBscQMV8Pi9wX4A/FE8SZzPR9JH3t5Udm6MeKKBwz4q1CJF20BYMnTaMUy/GZtpN2fI0Pnq34VOAwQLzWuY9idM+AYlbmES2TbDH0MDcM/R5d38fCa8Z5MrQjDAD500K/kx1zJFh00N+G+BiQDape6+MhxfpwwZpc6CGXpb5feBJn06iglv0Fjqr2ux4tzjuH5pV342S8mtya4l5GP31P5Vs/nvwdgIlb1ucNcM7oN6Gwu8yWPUgBQXxapPybUEaDpVCIpcIX3n5g/SUXVOHjCyOqJfGv2+LEdKWA+v7WsKRsJfA7F+867dBkOoDQy3CXiRWj7tZiIShzkCZaB6Om6ZIGeXJYM=
