@@ -1,0 +1,28 @@
+#! /bin/bash
+[ -z $DEBUG ] && [ "$DEBUG" != "" ] && set -xe
+
+# https://clang.llvm.org/extra/clang-tidy/
+npx node-gyp configure >/dev/null 2>&1
+
+NODE_ROOT=$(cat ./build/config.gypi | tail -n '+2' | jq -r ".variables.nodedir")
+NAN_ROOT=$(pwd)
+
+CLANG=".scripts/clang/bin/clang-tidy"
+CLANG_ARGS="-I$NODE_ROOT/include/node -I$NODE_ROOT/include/node/openssl -I$NAN_ROOT/node_modules/nan $@"
+
+FILTER="-iname *.c"
+
+if [ ! -f "$CLANG" ]; then
+  echo "Clang not found. Downloading..."
+
+  ./.scripts/clang-install
+
+  echo
+  echo "Done."
+fi
+
+for ext in cc cpp h; do FILTER="$FILTER -or -iname *.$ext"; done
+
+find ./src $FILTER | while read f; do
+  $CLANG $f -- $CLANG_ARGS;
+done

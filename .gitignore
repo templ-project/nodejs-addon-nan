@@ -80,3 +80,7 @@ package-lock.json
 # documentation
 docs
 docs.json
+
+# clang
+.scripts/clang
+.scripts/clang.tar.xz

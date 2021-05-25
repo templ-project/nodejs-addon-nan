@@ -1,29 +1,52 @@
-# Templ Javascript
+# Templ Node.js Addon Nan
 
-[![HitCount](http://hits.dwyl.com/templ-project/nodejs-addon-nan.svg)](http://hits.dwyl.com/templ-project/nodejs-addon-nan)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/templ-project/nodejs-addon-nan/issues)
-[![TravisCI](https://travis-ci.org/templ-project/nodejs-addon-nan.svg?branch=master)](https://travis-ci.org/templ-project/nodejs-addon-nan)
+<!-- https://hits.seeyoufarm.com/ -->
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ftempl-project%2Fnode&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/templ-project/node/issues)
+
 ![JSCPD](.jscpd/jscpd-badge.svg?raw=true)
-<!-- CI Badges -->
-<!-- [![CircleCI](https://circleci.com/gh/templ-project/nodejs-addon-nan.svg?style=shield)](https://circleci.com/gh/templ-project/nodejs-addon-nan) -->
 
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_nodejs-addon-nan)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_nodejs-addon-nan)
-[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_nodejs-addon-nan)
-[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_nodejs-addon-nan&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_nodejs-addon-nan)
+<!-- [![TravisCI](https://travis-ci.org/templ-project/node.svg?branch=master)](https://travis-ci.org/templ-project/node) -->
+<!-- CI Badges -->
+<!-- [![CircleCI](https://circleci.com/gh/templ-project/node.svg?style=shield)](https://circleci.com/gh/templ-project/node) -->
+
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_node)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=code_smells)](https://sonarcloud.io/dashboard?id=templ-project_node)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=templ-project_node)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=templ-project_node)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=security_rating)](https://sonarcloud.io/dashboard?id=templ-project_node)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=ncloc)](https://sonarcloud.io/dashboard?id=templ-project_node)
+[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_node)
+[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_node)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=sqale_index)](https://sonarcloud.io/dashboard?id=templ-project_node)
+[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_node&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_node)
 
 <!-- Donation Badges -->
 [![Donate to this project using Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/dragoscirjan)
 [![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QBP6DEBJDEMV2&source=url)
+<!--
+[![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/balupton)
+[![Donate to this project using Liberapay](https://img.shields.io/badge/liberapay-donate-yellow.svg)](https://liberapay.com/dragoscirjan)
+[![Donate to this project using Thanks App](https://img.shields.io/badge/thanksapp-donate-yellow.svg)](https://givethanks.app/donate/npm/badges)
+[![Donate to this project using Boost Lab](https://img.shields.io/badge/boostlab-donate-yellow.svg)](https://boost-lab.app/dragoscirjan/badges)
+[![Donate to this project using Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://buymeacoffee.com/balupton)
+[![Donate to this project using Open Collective](https://img.shields.io/badge/open%20collective-donate-yellow.svg)](https://opencollective.com/dragoscirjan)
+[![Donate to this project using Cryptocurrency](https://img.shields.io/badge/crypto-donate-yellow.svg)](https://dragoscirjan.me/crypto)
+[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://dragoscirjan.me/paypal)
+[![Buy an item on our wishlist for us](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://dragoscirjan.me/wishlist)
+-->
 
 <img alt="JavaScript Logo" src="https://github.com/templ-project/nodejs-addon-nan/blob/master/javascript.svg?raw=true" width="20%" align="right" />
-<img alt="TypeScript Logo" src="https://github.com/templ-project/nodejs-addon-nan/blob/master/typescript.svg?raw=true" width="20%" align="right" />
+
+<!-- Project Description Starts Here -->
+
 
 > *Any fool can write code that a computer can understand. Good programmers write code that humans can understand.* – Martin Fowler
 
-> **javascript** is a template project, designed by [Templ Project](http://templ-project.github.io).
+> **node-addon-nan** is a template project, designed by [Templ Project](http://templ-project.github.io).
 >
-> **javascript** includes instructions for initializing a new
+> **node-addon-nan** includes instructions for initializing a new
 > **JavaScript/[TypeScript](https://www.typescriptlang.org/)** project, and configuring it for development, unit
 > testing as well as code linting and analysis.
 >
@@ -93,29 +116,24 @@ Please install:
   - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-cpp-extension-pack)
   - Any other IDE you trust.
 - a JavaScript/TypeScript IDE
-  - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev Babel Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-babel-extension-pack) or [ITMCDev TypeScript Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-typescript-extension-pack)
+  - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev Node Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-extension-pack)
   - [Jetbrains WebStorm](https://www.jetbrains.com/webstorm/)
   - [Vim](https://www.vim.org/) with [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) and [HerringtonDarkholme/yats.vim](https://github.com/HerringtonDarkholme/yats.vim) extensions.
   - Any other IDE you trust.
 
 ##### VSCode Configuration
 
-- Copy ./vscode/c_cpp_properties.json.template to ./vscode/c_cpp_properties.json
-- Run `npx node-gyp configure` to discover the location of the NodeJS headers (search for smth like this `'-Dnode_root_dir=C:\\Users\\dragosc\\AppData\\Local\\node-gyp\\Cache\\12.16.2'`) and replace in the:
-```json
-  "includePath": [
-    "${workspaceFolder}/**", 
-    "${workspaceFolder}/node_modules/nan/**", 
-    "/path/to/node-gyp/Cache/<version>/include/node"
-  ],
-```
-- Add relevant import paths to your clangd modules:
-```json
-  "clangd.arguments": [
-      "-I/path/to/node_modules/nan",
-      "-I/path/to/node-gyp/Cache/12.16.2/include/node"
-  ]
-```
+- Configuring `.vscode/c_cpp_properties.json`:
+  - Run `node .scripts/vscode-config.js`. 
+    This will configure all paths for both this file and the `clangd.arguments` property found in `.vscode/settings.json`
+- Configuring the [llvm-vs-code-extensions.vscode-clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd):
+  - Part of the configuration is done through the module above, and it's contained in the project's local config
+  - Second part is to make sure that in your master config of VSCode, the `clangd.path` argument points to the correct binary.
+    (Usually this happens when you install the module.)
+
+<!-- ##### CLion Configuration -->
+
+<!-- TODO:  -->
 
 ### Testing
 
@@ -125,10 +143,10 @@ Testing is currently set to use unittest.
 
 #### Single Tests
 
-Run single unit tests file, by calling `make test:single -- test/path/to/file.test.js`
+Run single unit tests file, by calling `npm run test:single -- test/path/to/file.test.js`
 
 ```bash
-make test:single -- test/path/to/index.test.js
+npm test:single -- test/index.test.js
 ```
 
 ### Deployment
@@ -159,203 +177,3 @@ Small changelog history. The rest should be added to [CHANGELOG.md](CHANGELOG.md
 See here a template for changelogs: https://keepachangelog.com/en/1.0.0/
 
 Also see this tool for automatically generating them: https://www.npmjs.com/package/changelog -->
-
-> Remove Everything above this line
-
-<hr />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Project Title
-
-<!-- Set of shield/badges explaining where to find more information about the project (i.e. Where to look for unit test reports, where to see code coverage and code scans, etc.). You can find a lot of them on https://shields.io/) -->
-
-<!-- CI Badges -->
-<!-- [![TravisCI](https://travis-ci.org/templ-project/generic.svg?branch=master)](https://travis-ci.org/templ-project/generic) -->
-<!-- [![CircleCI](https://circleci.com/gh/templ-project/generic.svg?style=shield)](https://circleci.com/gh/templ-project/generic) -->
-
-<!-- Sonar Badges -->
-<!-- [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=templ-project_generic&metric=alert_status)](https://sonarcloud.io/dashboard?id=templ-project_generic)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=templ-project_generic&metric=coverage)](https://sonarcloud.io/component_measures/metric/coverage/list?id=templ-project_generic)
-[![SonarCloud Bugs](https://sonarcloud.io/api/project_badges/measure?project=templ-project_generic&metric=bugs)](https://sonarcloud.io/component_measures/metric/reliability_rating/list?id=templ-project_generic)
-[![SonarCloud Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=templ-project_generic&metric=vulnerabilities)](https://sonarcloud.io/component_measures/metric/security_rating/list?id=templ-project_generic) -->
-
-<!-- Donation Badges -->
-<!-- [![Donate to this project using Patreon](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://patreon.com/dragoscirjan)
-[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UMMN8JPLVAUR4&source=url)
-[![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/balupton)
-[![Donate to this project using Liberapay](https://img.shields.io/badge/liberapay-donate-yellow.svg)](https://liberapay.com/dragoscirjan)
-[![Donate to this project using Thanks App](https://img.shields.io/badge/thanksapp-donate-yellow.svg)](https://givethanks.app/donate/npm/badges)
-[![Donate to this project using Boost Lab](https://img.shields.io/badge/boostlab-donate-yellow.svg)](https://boost-lab.app/dragoscirjan/badges)
-[![Donate to this project using Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://buymeacoffee.com/balupton)
-[![Donate to this project using Open Collective](https://img.shields.io/badge/open%20collective-donate-yellow.svg)](https://opencollective.com/dragoscirjan)
-[![Donate to this project using Cryptocurrency](https://img.shields.io/badge/crypto-donate-yellow.svg)](https://dragoscirjan.me/crypto)
-[![Donate to this project using Paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://dragoscirjan.me/paypal)
-[![Buy an item on our wishlist for us](https://img.shields.io/badge/wishlist-donate-yellow.svg)](https://dragoscirjan.me/wishlist)
--->
-
-One Paragraph of project description goes here
-
-<!--
-Insert Table of Contents Here
-This can be done using [AlanWalk.markdown-toc](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-toc) plugin, 
-which is also included in 
-[itmcdev.generic-extension-pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.generic-extension-pack) extension pack.
--->
-<!-- TOC -->
-
-- [Templ Javascript](#templ-javascript)
-  - [Getting Started](#getting-started)
-    - [Prerequisites / Dependencies](#prerequisites--dependencies)
-        - [For Windows](#for-windows)
-        - [For Linux/Unix/OSX](#for-linuxunixosx)
-    - [Installation](#installation)
-    - [Development](#development)
-      - [Requirements](#requirements)
-        - [VSCode Configuration](#vscode-configuration)
-    - [Testing](#testing)
-      - [Single Tests](#single-tests)
-    - [Deployment](#deployment)
-  - [Authors](#authors)
-  - [Issues / Support](#issues--support)
-  - [License](#license)
-- [Project Title](#project-title)
-  - [Getting Started](#getting-started-1)
-    - [Prereqiusites / Dependencies](#prereqiusites--dependencies)
-      - [For Windows](#for-windows-1)
-      - [For Linux](#for-linux)
-      - [Known Issues / Troubleshooting](#known-issues--troubleshooting)
-    - [Installation](#installation-1)
-      - [Say what the step will be](#say-what-the-step-will-be)
-      - [And repeat](#and-repeat)
-    - [Development](#development-1)
-    - [Testing](#testing-1)
-      - [Break down into (at least) unit tests](#break-down-into-at-least-unit-tests)
-      - [and end to end tests](#and-end-to-end-tests)
-      - [And coding style tests](#and-coding-style-tests)
-    - [Deployment](#deployment-1)
-  - [Authors](#authors-1)
-  - [Issues / Support](#issues--support-1)
-  - [License](#license-1)
-  - [Changelog](#changelog)
-
-<!-- /TOC -->
-
-## Getting Started
-
-### Prereqiusites / Dependencies
-
-What things you need to install the software and how to install them (based on each OS type). 
-
-#### For Windows
-```bash
-# Give Examples
-
-npm install -g node-gyp windows-build-tools
-# Warning: Please note windows-build-tools will install MSVS which takes a 
-# LONG amount of time.
-```
-
-#### For Linux
-
-```bash
-# Give Examples
-
-apt-get install build-essential mono
-npm install -y node-gyp
-```
-
-#### Known Issues / Troubleshooting
-
-Describe a list of known issues, and how to bypass them.
-
-### Installation
-
-A step by step series of examples that tell you how to get a development env running
-
-
-#### Say what the step will be
-
-```
-Give the example
-```
-
-#### And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-### Development
-
-Explain any development process for the project, if necesary
-
-```
-give examples
-```
-
-### Testing
-
-
-Explain how to run the automated tests for this system
-
-#### Break down into (at least) unit tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-#### and end to end tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-#### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Authors
-* [Dragos Cirjan](mailto:dragos.cirjan@gmail.com) - Initial work - [PurpleBooth](#link-to-change)
-
-See also the list of contributors who participated in this project.
-
-## Issues / Support
-
-Add a set of links to the [issues](/templ-project/generic/issues) page/website, so people can know where to add issues/bugs or ask for support.
-
-## License
-
-(If the package is public, add licence)
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Changelog
-
-Small changelog history. The rest should be added to [CHANGELOG.md](CHANGELOG.md).
-
-See here a template for changelogs: https://keepachangelog.com/en/1.0.0/
-
-Also see this tool for automatically generating them: https://www.npmjs.com/package/changelog

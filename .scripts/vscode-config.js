@@ -1,9 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 const {spawn} = require('child_process');
 
-const cppConfigpath = './.vscode/c_cpp_properties.json';
+const cppConfigPath = './.vscode/c_cpp_properties.json';
+const vscodeConfigPath = './.vscode/settings.json';
 
-const cppConfig = JSON.parse(fs.readFileSync(cppConfigpath).toString());
+const cppConfig = JSON.parse(fs.readFileSync(cppConfigPath).toString());
+const vscodeConfig = JSON.parse(fs.readFileSync(vscodeConfigPath).toString());
 
 let config = '';
 
@@ -47,5 +50,12 @@ npxConfig((rootDir, code) => {
     ],
   }));
 
-  fs.writeFileSync(cppConfigpath, JSON.stringify(cppConfig, null, 2));
+  vscodeConfig['clangd.arguments'] = [
+    `-I${path.join(__dirname, '..', 'node_modules', 'nan')}`,
+    `-I${rootDir}/include/node`,
+    `-I${rootDir}/include/node/openssl`,
+  ];
+
+  fs.writeFileSync(cppConfigPath, JSON.stringify(cppConfig, null, 2));
+  fs.writeFileSync(vscodeConfigPath, JSON.stringify(vscodeConfig, null, 2));
 });

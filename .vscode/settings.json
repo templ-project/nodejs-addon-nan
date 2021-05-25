@@ -6,4 +6,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "clangd.arguments": [
+    "-I/home/dragosc/Workspace/templates/node-addon-nan/node_modules/nan",
+    "-I/home/dragosc/.cache/node-gyp/12.20.2/include/node",
+    "-I/home/dragosc/.cache/node-gyp/12.20.2/include/node/openssl"
+  ]
 }
