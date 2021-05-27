@@ -125,8 +125,9 @@ Please install:
 
 - Configuring `.vscode/c_cpp_properties.json`:
   - Run `node .scripts/vscode-config.js`. 
-    This will configure all paths for both this file and the `clangd.arguments` property found in `.vscode/settings.json`
-- Configuring the [llvm-vs-code-extensions.vscode-clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd):
+    This will generate configurations for both [c/c++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and
+    [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) modules.
+- Configuring the [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd):
   - Part of the configuration is done through the module above, and it's contained in the project's local config
   - Second part is to make sure that in your master config of VSCode, the `clangd.path` argument points to the correct binary.
     (Usually this happens when you install the module.)

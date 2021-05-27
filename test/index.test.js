@@ -1,6 +1,6 @@
-import {expect} from 'chai';
+const {expect} = require('chai');
 
-import {hello} from '../src';
+const {hello} = require('../src');
 
 describe('hello', function () {
   it('hello("World") to return "Hello World!"', function () {

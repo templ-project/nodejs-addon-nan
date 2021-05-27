@@ -2,6 +2,9 @@
 
 OS=$(uname)
 
+# https://github.com/llvm/llvm-project/releases/tag/llvmorg-11.0.0
+# https://github.com/llvm/llvm-project/releases/tag/llvmorg-12.0.0
+
 CLANG_VERSION="12.0.0"
 if [ "$OS" != "Darwin" ]; then
   OS_ARCH=$(uname -m)

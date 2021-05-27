@@ -8,7 +8,7 @@ NODE_ROOT=$(cat ./build/config.gypi | tail -n '+2' | jq -r ".variables.nodedir")
 NAN_ROOT=$(pwd)
 
 CLANG=".scripts/clang/bin/clang-tidy"
-CLANG_ARGS="-I$NODE_ROOT/include/node -I$NODE_ROOT/include/node/openssl -I$NAN_ROOT/node_modules/nan $@"
+CLANG_ARGS="$@ -- -I$NODE_ROOT/include/node -I$NODE_ROOT/include/node/openssl -I$NAN_ROOT/node_modules/nan $CLANG_CUSTOM_IMPORTS"
 
 FILTER="-iname *.c"
 
@@ -23,6 +23,21 @@ fi
 
 for ext in cc cpp h; do FILTER="$FILTER -or -iname *.$ext"; done
 
+lint_errors=0
 find ./src $FILTER | while read f; do
-  $CLANG $f -- $CLANG_ARGS;
+  lint_command="$CLANG $f $CLANG_ARGS"
+  lint_result=$($lint_command 2>&1)
+
+  if [ "$lint_result" != "" ]; then
+    echo $lint_result | grep error > /dev/null && echo -e "\e[91m$f\e[0m "
+    echo $lint_result | grep error > /dev/null || echo -e "\e[93m$f\e[0m "
+    $lint_command || lint_errors=$(($lint_errors + 1))
+    echo
+  else
+    echo -e "\e[2m$f\e[0m"
+  fi
 done
+
+if [[ $lint_errors -gt 0 ]]; then
+  exit 1
+fi

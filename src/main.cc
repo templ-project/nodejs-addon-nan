@@ -2,6 +2,11 @@
 #define BUILDING_NODE_EXTENSION
 #endif
 
+// #define IF_THROW(result, error)                                                                                        \
+//   if (result) {                                                                                                        \
+//     throw new Error(error)                                                                                             \
+//   }
+
 #include <nan.h>
 #include <node.h>
 #include <v8.h>
@@ -12,6 +17,7 @@ void Hello(const Nan::FunctionCallbackInfo<v8::Value> &info) {
   v8::Local<v8::String> who;
 
   if (info.Length() < 1) {
+    // IF_THROW(Nan::New("World").ToLocal(&who) != true, "could not copy default value");
     Nan::New("World").ToLocal(&who);
   } else {
     if (!info[0]->IsString()) {

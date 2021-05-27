@@ -1,6 +1,10 @@
 # ide
 .idea
 *.code-workspace
+.vscode
+!.vscode/c_cpp_properties.json
+!.vscode/extensions.json
+!.vscode/settings.json
 
 # Logs
 logs
@@ -84,3 +88,6 @@ docs.json
 # clang
 .scripts/clang
 .scripts/clang.tar.xz
+
+# cmake-js
+cmake-build-debug
