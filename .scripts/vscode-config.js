@@ -94,10 +94,20 @@ function writeCCppProperties(includes) {
 
 function writeCompileFlagsTxt(includes) {
   console.log('Configuring `llvm-vs-code-extensions.vscode-clangd` extension...');
-  let lines = ['-Wall'];
+  const compileFlagsTxtPath = path.join(__dirname, '..', 'compile_flags.txt');
+  const compileFlagsTxt = fs.readFileSync(compileFlagsTxtPath).toString();
+  let lines = [];
   includes.forEach((c) => (lines = [...lines, '-I', c]));
 
-  fs.writeFileSync(path.join(__dirname, '..', 'compile_flags.txt'), lines.join('\n'));
+  fs.writeFileSync(
+    compileFlagsTxtPath,
+    compileFlagsTxt.replace(
+      /# start clangd-config here\n(.+\n)*# end clangd-config here/gi,
+      `# start clangd-config here
+${lines.join('\n')}
+# end clangd-config here`,
+    ),
+  );
   console.log('Done.');
 }
 

@@ -1,5 +1,11 @@
 # ide
 .idea
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/.name
+!.idea/node-addon-nan.iml
+!.idea/vcs.xml
+!.idea/workspace.xml
 *.code-workspace
 .vscode
 !.vscode/c_cpp_properties.json

@@ -9,10 +9,10 @@ add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 
 if (CMAKE_JS_VERSION)
 else()
-    # start idea-config here
-    include_directories(/home/dragosc/.cache/node-gyp/12.20.2/include/node)
-    include_directories(/home/dragosc/Workspace/templates/node-addon-nan/node_modules/nan)
-    # end idea-config here
+  # start clion-config here
+  include_directories(/home/dragosc/.cache/node-gyp/12.20.2/include/node)
+  include_directories(/home/dragosc/Workspace/templates/node-addon-nan/node_modules/nan)
+  # end clion-config here
 endif()
 
 # Gives our library file a .node extension without any "lib" prefix
