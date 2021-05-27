@@ -4,6 +4,7 @@
   "description": "NodeJs Addon Project Template using NAN",
   "main": "dist/index.js",
   "scripts": {
+    "build:dev": "npx node-gyp configure && npx node-gyp build --debug",
     "build": "npx node-gyp configure && npx node-gyp build",
     "ca:lint": "npm run prettier:write && npm run lint:write",
     "ca:quality": "npm run jscpd && npm run depcruise",
@@ -22,6 +23,8 @@
     "lint:write": "npm run lint:cpp:write && npm run lint:js:write",
     "lint": "npm run lint:cpp && npm run lint:js",
     "postinstall": "node ./.scripts/clang-link.js",
+    "prebuild:dev": "npm run clean",
+    "prebuild": "npm run clean",
     "prerelease": "npm run build",
     "pretest": "npm run clean && npm run build",
     "prettier:check": "npm run prettier:cpp:check && npm run prettier:js:check",
