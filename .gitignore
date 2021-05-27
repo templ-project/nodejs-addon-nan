@@ -1,17 +1,11 @@
 # ide
 .idea
-!.idea/misc.xml
-!.idea/modules.xml
-!.idea/.name
-!.idea/node-addon-nan.iml
-!.idea/vcs.xml
-!.idea/workspace.xml
 *.code-workspace
-.vscode
-!.vscode/c_cpp_properties.json
+.vscode/*
+!.vscode/c_cpp_properties.json.template
 !.vscode/extensions.json
 !.vscode/launch.json
-!.vscode/settings.json
+!.vscode/settings.json.template
 
 # Logs
 logs
@@ -97,4 +91,4 @@ docs.json
 .scripts/clang.tar.xz
 
 # cmake-js
-cmake-build-debug
+cmake-build-*

@@ -111,30 +111,25 @@ npm install
 Please install:
 - [NodeJs](https://nodejs.org/en/). We support version 10.x and above.
 - [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) package: `npm install --global windows-build-tools`
-- [LLVM Clang](https://releases.llvm.org/download.html) (this will handle C++ lint and prettier)
 - a C++ IDE
   - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-cpp-extension-pack)
-  - Any other IDE you trust.
+    - For Linux:
+      - [gdb](https://www.gnu.org/software/gdb/) if you plan in using **gdb** as debug tool,
+      - if not, [vadimcn.vscode-lldb](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) will help you without any flaws
+  - [Jetbrains CLion](https://www.jetbrains.com/clion/)
+  - Please help us supporting other IDEs as well
 - a JavaScript/TypeScript IDE
   - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev Node Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-extension-pack)
   - [Jetbrains WebStorm](https://www.jetbrains.com/webstorm/)
-  - [Vim](https://www.vim.org/) with [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) and [HerringtonDarkholme/yats.vim](https://github.com/HerringtonDarkholme/yats.vim) extensions.
-  - Any other IDE you trust.
+  - Please help us supporting other IDEs as well
 
 ##### VSCode Configuration
 
-- Configuring `.vscode/c_cpp_properties.json`:
-  - Run `node .scripts/vscode-config.js`. 
-    This will generate configurations for both [c/c++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and
-    [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) modules.
-- Configuring the [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd):
-  - Part of the configuration is done through the module above, and it's contained in the project's local config
-  - Second part is to make sure that in your master config of VSCode, the `clangd.path` argument points to the correct binary.
-    (Usually this happens when you install the module.)
+Please read about configuring [Visual Studio Code](manual/configure_vscode.md).
 
-<!-- ##### CLion Configuration -->
+##### CLion Configuration
 
-<!-- TODO:  -->
+Please read about configuring [Jetbrains CLion](manual/configure_clion.md).
 
 ### Testing
 
