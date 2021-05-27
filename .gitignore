@@ -89,6 +89,8 @@ docs.json
 # clang
 .scripts/clang
 .scripts/clang.tar.xz
+compile_flags.txt
 
 # cmake-js
 cmake-build-*
+CMakeLists.txt
