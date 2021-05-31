@@ -90,7 +90,8 @@
     "release-it": "^14.6.2",
     "rimraf": "^3.0.2",
     "sonarqube-scanner": "^2.8.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "xmake": "^0.3.10"
   },
   "peerDependencies": {},
   "dependencies": {
