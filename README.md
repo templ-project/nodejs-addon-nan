@@ -53,7 +53,7 @@
 > **node-addon-nam** can be configured to use:
 > * **[node-gyp](https://www.npmjs.com/package/node-gyp)** default and official builder 
 > * **[cmake-js](https://www.npmjs.com/package/cmake-js)** builder based on [CMake](https://cmake.org/) 
-> * **[xmake](https://www.npmjs.com/package/xmake)** builder based on [xmake](https://xmake.io/) 
+<!-- > * **[xmake](https://www.npmjs.com/package/xmake)** builder based on [xmake](https://xmake.io/)  -->
 >
 > **javascript** part implements:
 > - [jscpd](https://github.com/kucherenko/jscpd), [dependency-cruiser](https://github.com/sverweij/dependency-cruiser) for code analisys
@@ -71,22 +71,6 @@
   - [Getting Started](#getting-started)
     - [Prerequisites / Dependencies](#prerequisites--dependencies)
         - [TODO: For MacOS](#todo-for-macos)
-        - [For Linux](#for-linux)
-        - [For Windows](#for-windows)
-          - [For cmake](#for-cmake)
-          - [~~For xmake~~](#for-xmake)
-      - [Known Issues / Troubleshooting](#known-issues--troubleshooting)
-    - [Installation](#installation)
-    - [Development](#development)
-      - [Requirements](#requirements)
-        - [VSCode Configuration](#vscode-configuration)
-        - [CLion Configuration](#clion-configuration)
-    - [Testing](#testing)
-      - [Single Tests](#single-tests)
-    - [Deployment](#deployment)
-  - [Authors](#authors)
-  - [Issues / Support](#issues--support)
-  - [License](#license)
 
 <!-- /TOC -->
 
@@ -96,19 +80,20 @@
 
 ##### TODO: For MacOS
 
-- Please install `git`, `c++`, `make`, `cmake` or ~~`xmake`~~
+- Please install `git`, `c++`, `make`, `cmake` <!--or ~~`xmake`~~-->
 - Please install Python 3.6 or above.
 
 ```bash
 brew install git make
 # for CMake
 brew install  cmake
-# for xmake
-bash <(curl -fsSL https://xmake.io/shget.text)
 ```
+<!-- # for xmake
+bash <(curl -fsSL https://xmake.io/shget.text)
+``` -->
 ##### For Linux
 
-- Please install `git`, `c++`, `make`, `cmake` or ~~`xmake`~~
+- Please install `git`, `c++`, `make`, `cmake` <!--or ~~`xmake`~~-->
 - Please install Python 3.6 or above.
 
 ```bash
@@ -116,9 +101,10 @@ bash <(curl -fsSL https://xmake.io/shget.text)
 sudo apt-get install build-essential git make -y
 # for CMake
 sudo apt-get install  cmake
-# for xmake
-bash <(curl -fsSL https://xmake.io/shget.text)
 ```
+<!-- # for xmake
+bash <(curl -fsSL https://xmake.io/shget.text)
+``` -->
 ##### For Windows
 
 - Please install [git-scm](https://git-scm.com/download/win) tool.
@@ -132,11 +118,11 @@ bash <(curl -fsSL https://xmake.io/shget.text)
 ###### For cmake
 - Please install [cmake](https://cmake.org/)
 
-###### ~~For xmake~~
+<!-- ###### ~~For xmake~~
 - Please install [xmake](https://xmake.io/)
 ```powershell
 Invoke-Expression (Invoke-Webrequest 'https://xmake.io/psget.text' -UseBasicParsing).Content
-```
+``` -->
 #### Known Issues / Troubleshooting
 
 1. Note that `node-gyp` doesn't support Python 2.7 anymore, so you'll need to install Python 3.6 or above.
