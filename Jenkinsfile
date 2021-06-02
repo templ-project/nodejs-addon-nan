@@ -50,23 +50,23 @@ pipeline {
             }
           }
         }
-        // stage("Code Analysis") {
-        //   steps {
-        //     script {
-        //       nvm.runSh """
-        //         export PATH=\$PATH:/opt/clang/clang+llvm-12.0.0-x86_64-linux-gnu-ubuntu-20.04/bin
-        //         npx yarn run ca
-        //       """, params.NODE_VERSION
-        //     }
-        //   }
-        // }
-        // stage("Code UnitTest") {
-        //   steps {
-        //     script {
-        //       nvm.runSh "npx yarn run test", params.NODE_VERSION
-        //     }
-        //   }
-        // }
+        stage("Code Analysis") {
+          steps {
+            script {
+              nvm.runSh """
+                export PATH=\$PATH:/opt/clang/clang+llvm-12.0.0-x86_64-linux-gnu-ubuntu-20.04/bin
+                npx yarn run ca
+              """, params.NODE_VERSION
+            }
+          }
+        }
+        stage("Code UnitTest") {
+          steps {
+            script {
+              nvm.runSh "npx yarn run test", params.NODE_VERSION
+            }
+          }
+        }
         stage("Code Sonar") {
           when {
             expression {
