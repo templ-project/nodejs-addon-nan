@@ -50,23 +50,23 @@ pipeline {
             }
           }
         }
-        stage("Code Analysis") {
-          steps {
-            script {
-              nvm.runSh """
-                export PATH=\$PATH:/opt/clang/clang+llvm-12.0.0-x86_64-linux-gnu-ubuntu-20.04/bin
-                npx yarn run ca
-              """, params.NODE_VERSION
-            }
-          }
-        }
-        stage("Unit Test") {
-          steps {
-            script {
-              nvm.runSh "npx yarn test", params.NODE_VERSION
-            }
-          }
-        }
+        // stage("Code Analysis") {
+        //   steps {
+        //     script {
+        //       nvm.runSh """
+        //         export PATH=\$PATH:/opt/clang/clang+llvm-12.0.0-x86_64-linux-gnu-ubuntu-20.04/bin
+        //         npx yarn run ca
+        //       """, params.NODE_VERSION
+        //     }
+        //   }
+        // }
+        // stage("Code UnitTest") {
+        //   steps {
+        //     script {
+        //       nvm.runSh "npx yarn run test", params.NODE_VERSION
+        //     }
+        //   }
+        // }
         stage("Code Sonar") {
           when {
             expression {
@@ -89,7 +89,7 @@ pipeline {
                       || ( curl -sSL https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip \
                           --output ./build-wrapper-linux-x86.zip && unzip ./build-wrapper-linux-x86.zip )
                     chmod 755 ./build-wrapper-linux-x86-64
-                    ./build-wrapper-linux-x86-64 --out-dir bw-output make -j2
+                    ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output make -j2
                   """
                   nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST}", params.NODE_VERSION
                   // nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
@@ -97,13 +97,6 @@ pipeline {
               } else {
                 echo "skip"
               }
-            }
-          }
-        }
-        stage("Code UnitTest") {
-          steps {
-            script {
-              nvm.runSh "npx yarn run test", params.NODE_VERSION
             }
           }
         }
