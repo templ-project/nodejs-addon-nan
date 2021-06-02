@@ -1,3 +1,5 @@
+## [0.0.3](https://github.com/templ-project/node-addon-nan/compare/0.1.0...0.0.3) (2021-06-02)
+
 # 0.1.0 (2021-06-02)
 
 
