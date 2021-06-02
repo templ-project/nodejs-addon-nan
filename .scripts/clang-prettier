@@ -1,7 +1,9 @@
 #! /bin/bash
 [ -z $DEBUG ] && [ "$DEBUG" != "" ] && set -xe
 
-CLANG=".scripts/clang/bin/clang-format"
+which clang-format > /dev/null && CLANG=$(which clang-format)
+which clang-format > /dev/null || CLANG=".scripts/clang/bin/clang-format"
+
 CLANG_ARGS="--verbose -style=file"
 
 FILTER="-iname *.c"

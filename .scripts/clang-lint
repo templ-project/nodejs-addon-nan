@@ -21,7 +21,9 @@ CLANG_IMPORTS=$(cat build/main.target.mk \
 
 NAN_ROOT=$(pwd)
 
-CLANG=".scripts/clang/bin/clang-tidy"
+which clang-tidy > /dev/null && CLANG=$(which clang-tidy)
+which clang-tidy > /dev/null || CLANG=".scripts/clang/bin/clang-tidy"
+
 CLANG_ARGS="$@ -- $CLANG_IMPORTS $CLANG_CUSTOM_IMPORTS"
 
 FILTER="-iname *.c"
@@ -40,7 +42,7 @@ for ext in cc cpp h; do FILTER="$FILTER -or -iname *.$ext"; done
 lint_errors=0
 find ./src $FILTER | while read f; do
   lint_command="$CLANG $f $CLANG_ARGS"
-  echo "$lint_command"
+  # echo "$lint_command"
   lint_result=$($lint_command 2>&1)
 
   if [ "$lint_result" != "" ]; then

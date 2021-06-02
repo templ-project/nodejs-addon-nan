@@ -1,3 +1,10 @@
+# From https://docs.sonarqube.org/latest/analysis/languages/cfamily/ we learn that
+# The Build Wrapper collects information about the build including absolute file paths (source files, standard headers,
+# libraries, etc...). Later on, SonarScanner uses this information and needs to access those paths. Whereas this is
+# straightforward while running these 2 steps on the same host, it is worth some consideration when using any sort of
+# containerization. A consequence of this is that C / C++ / Objective-C analysis is NOT supported by SonarScanner CLI
+# Docker image.
+
 name: SonarCloud
 
 on:

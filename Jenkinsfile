@@ -12,7 +12,7 @@ pipeline {
     // error @babel/eslint-parser@7.14.2: The engine "node" is incompatible with this module. Expected version "^10.13.0 || ^12.13.0 || >=14.0.0".0
     NODE_VERSIONS = "12 14 16"
     NODE_VERSION_DEFAULT = "14"
-    RUN_SONAR_SCANNER = 'no'
+    RUN_SONAR_SCANNER = 'yes'
   }
 
   parameters {
@@ -53,7 +53,17 @@ pipeline {
         stage("Code Analysis") {
           steps {
             script {
-              nvm.runSh "npx yarn run ca", params.NODE_VERSION
+              nvm.runSh """
+                export PATH=\$PATH:/opt/clang/clang+llvm-12.0.0-x86_64-linux-gnu-ubuntu-20.04/bin
+                npx yarn run ca
+              """, params.NODE_VERSION
+            }
+          }
+        }
+        stage("Unit Test") {
+          steps {
+            script {
+              nvm.runSh "npx yarn test", params.NODE_VERSION
             }
           }
         }
@@ -63,6 +73,9 @@ pipeline {
               return env.RUN_SONAR_SCANNER &&
                 env.RUN_SONAR_SCANNER.toLowerCase() ==~ /(1|y(es)?)/
             }
+            expression {
+              return env.NODE_VERSION == env.NODE_VERSION_DEFAULT
+            }
           }
           steps {
             script {
@@ -71,6 +84,13 @@ pipeline {
                   string(credentialsId: 'sonar_server_host', variable: 'SONAR_HOST'),
                   string(credentialsId: 'sonar_server_login', variable: 'SONAR_LOGIN')
                 ]) {
+                  sh """
+                    [ -f ./build-wrapper-linux-x86-64 ] \
+                      || ( curl -sSL https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip \
+                          --output ./build-wrapper-linux-x86.zip && unzip ./build-wrapper-linux-x86.zip )
+                    chmod 755 ./build-wrapper-linux-x86-64
+                    ./build-wrapper-linux-x86-64 --out-dir bw-output make -j2
+                  """
                   nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
                 }
               } else {
