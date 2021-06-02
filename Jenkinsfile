@@ -92,9 +92,8 @@ pipeline {
                     rm -rf ./build/Release
                     ./node_modules/.bin/node-gyp configure
                     ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output make V=1 BUILDTYPE=Release -C build
-                    npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST}
+                    npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}
                   """, params.NODE_VERSION
-                  // nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
                 }
               } else {
                 echo "skip"
