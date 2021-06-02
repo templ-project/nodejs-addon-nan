@@ -23,6 +23,8 @@ jobs:
         run: npm run lint:log || true
       - name: Code UnitTests
         run: npm run test
+      - name: Build Wrapper
+        run: build-wrapper-linux-x86-64 --out-dir bw-output npm run build
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
