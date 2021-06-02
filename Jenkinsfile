@@ -89,7 +89,7 @@ pipeline {
                       || ( curl -sSL https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip \
                           --output ./build-wrapper-linux-x86.zip && unzip ./build-wrapper-linux-x86.zip )
                     chmod 755 ./build-wrapper-linux-x86/build-wrapper-linux-x86-64
-                    ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output make -j2
+                    ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output npx yarn run build
                   """
                   nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST}", params.NODE_VERSION
                   // nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
