@@ -4,7 +4,9 @@ const path = require('path');
 
 function runConfigure(tool, callback) {
   console.log(`Running '${tool}' configuration...`);
-  const npx = spawn('npx', [tool, 'configure']);
+  const npx = spawn(path.join(`.`, `node_modules`, '.bin', process.platform !== 'win32' ? tool : `${tool}.cmd`), [
+    'configure',
+  ]);
   let config = '';
 
   npx.stdout.on('data', (data) => {
@@ -58,7 +60,7 @@ function parseNodeGypSettingsAndConfigureIde(callback) {
   if (process.platform !== 'win32') {
     includes = parseMainTargetMk();
   } else {
-    // TODO:
+    includes = parseMainVcxproj();
   }
   console.log('Done.');
 
@@ -97,6 +99,24 @@ function parseMainTargetMk() {
         return null;
       }
     });
+}
+
+function parseMainVcxproj() {
+  return fs
+    .readFileSync(path.join(__dirname, '..', 'build', 'main.vcxproj'))
+    .toString()
+    .split('\n')
+    .filter((l) => l.includes('AdditionalIncludeDirectories'))
+    .map((l) =>
+      l
+        .replace(/<\/?AdditionalIncludeDirectories>/gi, '')
+        .replace(/;%\(AdditionalIncludeDirectories\)/gi, '')
+        .trim()
+        .split(';'),
+    )
+    .reduce((a, b) => [...new Set([...a, ...b])], [])
+    .map(l => path.isAbsolute(l) ? l : path.join(__dirname, l))
+    .map(l => l.replace(/\\/ig, '/'));
 }
 
 function writeCMakeListsTxt(includes) {

@@ -44,24 +44,67 @@
 
 > *Any fool can write code that a computer can understand. Good programmers write code that humans can understand.* – Martin Fowler
 
-> **node-addon-nan** is a template project, designed by [Templ Project](http://templ-project.github.io).
+> **node-addon-nan** is a template project, designed by [Templ Project](http://templ-project.github.io). Please download it and adapt it as you see fit.
 >
 > **node-addon-nan** includes instructions for initializing a new
-> **JavaScript/[TypeScript](https://www.typescriptlang.org/)** project, and configuring it for development, unit
+> **NodeJs Nan** addon project, and configuring it for development, unit
 > testing as well as code linting and analysis.
+> 
+> **node-addon-nam** can be configured to use:
+> * **[node-gyp](https://www.npmjs.com/package/node-gyp)** default and official builder 
+> * **[cmake-js](https://www.npmjs.com/package/cmake-js)** builder based on [CMake](https://cmake.org/) 
+<!-- > * **[xmake](https://www.npmjs.com/package/xmake)** builder based on [xmake](https://xmake.io/)  -->
 >
-> **javascript** implements:
->
+> **javascript** part implements:
 > - [jscpd](https://github.com/kucherenko/jscpd), [dependency-cruiser](https://github.com/sverweij/dependency-cruiser) for code analisys
 > - [prettier](https://prettier.io/) for code formatting
 > - [eslint](https://eslint.org/) for linting
 >
-> By default, this implementation uses [npm](https://www.npmjs.com/), but you can easily change it to [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.js.org/) or any other package manager.
+> **c++** part implements:
+> - [llmv clang](https://clang.llvm.org/) for linting and formatting
+>
+> By default, this implementation uses [npm](https://www.npmjs.com/), but you can easily change it to [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.js.org/) or any other package manager. 
+
+<!-- TOC -->
+
+- [Templ Node.js Addon Nan](#templ-nodejs-addon-nan)
+  - [Getting Started](#getting-started)
+    - [Prerequisites / Dependencies](#prerequisites--dependencies)
+        - [TODO: For MacOS](#todo-for-macos)
+
+<!-- /TOC -->
 
 ## Getting Started
 
 ### Prerequisites / Dependencies
 
+##### TODO: For MacOS
+
+- Please install `git`, `c++`, `make`, `cmake` <!--or ~~`xmake`~~-->
+- Please install Python 3.6 or above.
+
+```bash
+brew install git make
+# for CMake
+brew install  cmake
+```
+<!-- # for xmake
+bash <(curl -fsSL https://xmake.io/shget.text)
+``` -->
+##### For Linux
+
+- Please install `git`, `c++`, `make`, `cmake` <!--or ~~`xmake`~~-->
+- Please install Python 3.6 or above.
+
+```bash
+# i.e ubuntu
+sudo apt-get install build-essential git make -y
+# for CMake
+sudo apt-get install  cmake
+```
+<!-- # for xmake
+bash <(curl -fsSL https://xmake.io/shget.text)
+``` -->
 ##### For Windows
 
 - Please install [git-scm](https://git-scm.com/download/win) tool.
@@ -69,21 +112,21 @@
   - Install [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm)
   - Install [make](https://sourceforge.net/projects/ezwinports/files/) from [ezwinports](https://sourceforge.net/projects/ezwinports/files/)
   - Install [chocolatey](https://chocolatey.org/), run `choco install make`
+- Please install [Python](https://www.python.org/downloads/windows/) & [Microsoft Build Tools 2017](https://visualstudio.microsoft.com/):
+  - Run `npm i -g windows-build-tools`
 
-##### For Linux/Unix/OSX
+###### For cmake
+- Please install [cmake](https://cmake.org/)
 
-- Please install `git` and `make`
+<!-- ###### ~~For xmake~~
+- Please install [xmake](https://xmake.io/)
+```powershell
+Invoke-Expression (Invoke-Webrequest 'https://xmake.io/psget.text' -UseBasicParsing).Content
+``` -->
+#### Known Issues / Troubleshooting
 
-```bash
-# i.e debian
-sudo apt-get install git make -y
-# i.e mac OS
-brew install make git
-```
-
-<!-- #### Known Issues / Troubleshooting
-
-None for now. -->
+1. Note that `node-gyp` doesn't support Python 2.7 anymore, so you'll need to install Python 3.6 or above.
+2. If you plan on using [CLion](https://www.jetbrains.com/clion/) we recommend switching to `cmake-js`, since CLion has not support for `gyp`.
 
 ### Installation
 
@@ -109,8 +152,7 @@ npm install
 #### Requirements
 
 Please install:
-- [NodeJs](https://nodejs.org/en/). We support version 10.x and above.
-- [windows-build-tools](https://www.npmjs.com/package/windows-build-tools) package: `npm install --global windows-build-tools`
+- [NodeJs](https://nodejs.org/en/). We support version 12.x and above.
 - a C++ IDE
   - [Visual Studio Code](https://code.visualstudio.com/) with [ITMCDev C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=itmcdev.node-cpp-extension-pack)
     - For Linux:

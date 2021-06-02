@@ -1,2 +1,2 @@
 
-powershell -executionpolicy bypass %~dp0\prettier-cpp.ps1 %*
+powershell -executionpolicy bypass %~dp0\clang-prettier.ps1 %*
