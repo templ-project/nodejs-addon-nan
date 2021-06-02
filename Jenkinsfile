@@ -84,7 +84,7 @@ pipeline {
                   string(credentialsId: 'sonar_server_host', variable: 'SONAR_HOST'),
                   string(credentialsId: 'sonar_server_login', variable: 'SONAR_LOGIN')
                 ]) {
-                  sh """
+                  nvm.runSh """
                     [ -f ./build-wrapper-linux-x86-64 ] \
                       || ( curl -sSL https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip \
                           --output ./build-wrapper-linux-x86.zip && unzip ./build-wrapper-linux-x86.zip )
@@ -92,8 +92,8 @@ pipeline {
                     rm -rf ./build/Release
                     ./node_modules/.bin/node-gyp configure
                     ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output make V=1 BUILDTYPE=Release -C build
-                  """
-                  nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST}", params.NODE_VERSION
+                    npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST}
+                  """, params.NODE_VERSION
                   // nvm.runSh "npx yarn run sonar -- -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_LOGIN}", params.NODE_VERSION
                 }
               } else {
