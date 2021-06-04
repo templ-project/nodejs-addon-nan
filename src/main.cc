@@ -3,10 +3,8 @@
 #endif
 
 #define if_unmet_nan_throw(call, thrower, error)                                                                       \
-  {                                                                                                                    \
-    if (!(call)) {                                                                                                     \
-      thrower(error);                                                                                                  \
-    }                                                                                                                  \
+  if (!(call)) {                                                                                                       \
+    thrower(error);                                                                                                    \
   }
 
 #include <nan.h>
