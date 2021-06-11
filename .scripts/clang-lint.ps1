@@ -31,7 +31,9 @@ $paths = cat .\build\main.vcxproj `
   } `
   | select -Unique
 
-echo $paths
+if ($env:CLANG_CUSTOM_IMPORTS) {
+  $paths = $paths + $env:CLANG_CUSTOM_IMPORTS.Split(' ')
+}
 
 $CLANG_COMMAND = "clang-tidy"
 $CLANG_ARGS = $args + @("--") + $paths

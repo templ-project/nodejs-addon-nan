@@ -4,11 +4,27 @@
 # https://clang.llvm.org/extra/clang-tidy/
 npx node-gyp configure >/dev/null 2>&1
 
-NODE_ROOT=$(cat ./build/config.gypi | tail -n '+2' | jq -r ".variables.nodedir")
+PWD=$(pwd)
+
+CLANG_IMPORTS=$(cat build/main.target.mk \
+  | grep "\-I" \
+  | sed "s/\-I//g" \
+  | sed "s/ \\\\$//g" \
+  | sed "s/[[:space:]]*$//g" \
+  | sed "s/^[[:space:]]*//g" \
+  | sed "s|\$(srcdir)|${PWD}|g" \
+  | sort \
+  | while read f; do [[ -d $f ]] && echo " -I$f"; done \
+  | uniq \
+  | tr -d '\n')
+
+
 NAN_ROOT=$(pwd)
 
-CLANG=".scripts/clang/bin/clang-tidy"
-CLANG_ARGS="$@ -- -I$NODE_ROOT/include/node -I$NODE_ROOT/include/node/openssl -I$NAN_ROOT/node_modules/nan $CLANG_CUSTOM_IMPORTS"
+which clang-tidy > /dev/null && CLANG=$(which clang-tidy)
+which clang-tidy > /dev/null || CLANG=".scripts/clang/bin/clang-tidy"
+
+CLANG_ARGS="$@ -- $CLANG_IMPORTS $CLANG_CUSTOM_IMPORTS"
 
 FILTER="-iname *.c"
 
@@ -26,6 +42,7 @@ for ext in cc cpp h; do FILTER="$FILTER -or -iname *.$ext"; done
 lint_errors=0
 find ./src $FILTER | while read f; do
   lint_command="$CLANG $f $CLANG_ARGS"
+  # echo "$lint_command"
   lint_result=$($lint_command 2>&1)
 
   if [ "$lint_result" != "" ]; then
