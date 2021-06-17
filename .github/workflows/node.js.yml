@@ -31,6 +31,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Make CLang Available
+      run: sudo apt-get install -y clang-tidy clang-format
     - name: Init
       run: npm i
     - name: Code Analysis
